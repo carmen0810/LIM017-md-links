@@ -1,0 +1,96 @@
+import { readFile, readFileSync } from "fs";
+import { JSDOM } from "jsdom";
+import { Remarkable } from "remarkable";
+import path from "path";
+import dir from "node-dir";
+import fetch from "node-fetch";
+var md = new Remarkable();
+
+// TESTED :Uniques Links
+const onlyUnique = (value, index, self) => {
+  return self.indexOf(value) === index;
+}
+
+// TESTED :HTTP status
+const statusHttp = (link, callback) => {
+  let status;
+  
+  fetch(link)
+    .then((res) => {
+      status = res.status;
+      callback(status);
+    })
+    .catch(() => {
+      console.log('error');
+      status = 404;
+      callback(status);
+    });
+};
+
+// TESTED :Reading directory recursive
+const readDirectoriesRecursive = (directory, allFilesMD) => {
+  dir.files(directory, function (err, files) {
+    // if (err) throw err;
+    if (err) {
+      allFilesMD(err)
+    } else {
+      allFilesMD(files.filter((file) => extMD(file)));
+    }
+  });
+};
+
+
+// TESTED :Absolute route?
+const absolutePath = (pathData) => {
+  return path.isAbsolute(pathData);
+};
+
+// TESTED :Convert in Absolute route
+const absolutePathResolve = (pathData) => {
+  return path.resolve(pathData);
+};
+
+// TESTED :Details path
+const pathDetails = (pathData) => {
+  return path.parse(pathData);
+};
+
+// P TESTED : Convert file in HTML
+const fileConvertedInHTML = (data) => {
+  return md.render(data);
+};
+
+// TESTED :Search links
+const linksInFile = (dataHTML) => {
+  const dom = new JSDOM(dataHTML);
+  const hrefData = dom.window.document.querySelectorAll("a");
+  return hrefData;
+};
+
+// TESTED : Read file
+const readFileData = (url, printFile) => {
+  // readFile(url, "utf8", (err, data) => {
+  //   if (err) {
+  //     throw err;
+  //   }
+  //   printFile(data);
+  // });
+  const data = readFileSync(url, "utf8");
+  printFile(data);
+};
+
+// TESTED : Ext file ".md"
+const extMD = (file) => path.extname(file) == ".md";
+
+export {
+  readDirectoriesRecursive,
+  absolutePath,
+  absolutePathResolve,
+  pathDetails,
+  fileConvertedInHTML,
+  readFileData,
+  linksInFile,
+  extMD,
+  statusHttp,
+  onlyUnique,
+};
