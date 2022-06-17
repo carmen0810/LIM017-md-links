@@ -14,14 +14,12 @@ const onlyUnique = (value, index, self) => {
 // TESTED :HTTP status
 const statusHttp = (link, callback) => {
   let status;
-  
   fetch(link)
     .then((res) => {
       status = res.status;
       callback(status);
     })
     .catch(() => {
-      console.log('error');
       status = 404;
       callback(status);
     });
@@ -94,3 +92,4 @@ export {
   statusHttp,
   onlyUnique,
 };
+

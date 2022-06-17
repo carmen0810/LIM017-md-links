@@ -15,12 +15,12 @@ if (pathInput == undefined || pathInput == "") {
     {
       type: "list",
       name: "optionsData",
-      message: "Options to statistics: ",
+      message: "Opciones estadísticas ",
       choices: [
         "1.- listar",
         "2.- Validar enlaces",
         "3.- Estadísticas de enlaces",
-        //"4.- Validar and mostrar estadísticas",
+        "4.- Validar y mostrar estadísticas",
       ],
     },
   ]);
@@ -32,31 +32,21 @@ if (pathInput == undefined || pathInput == "") {
       data.optionsData =  { 'validate': true}
     } else if (data.optionsData == '3.- Estadísticas de enlaces') {
       data.optionsData =  { 'stats': true}
-    } //else if (data.optionsData == '4.- Validar and mostrar estadísticas') {
-    //   data.optionsData =  { 'stats': true, 'validate': true}
-    // }
+    } else if (data.optionsData == '4.- Validar y mostrar estadísticas') {
+      data.optionsData =  { 'stats': true, 'validate': true}
+    }
     // llama y envia a Cli
     cli(data);
   });
 } else {
-  // mg-links <path> options : Receive path and options in 1 line
-  // used commander and program
-  // capture options
   program
     .option("-v, --validate", "Validar enlaces")
     .option("-s, --stats", "Estadísticas")
     .option("-s -v,  --stats --validate", "Validar y mostrar estadísticas");
   // Print results of commands for use
   program.parse(process.argv);
-  // process.argv [
-  //   'C:\\Program Files\\nodejs\\node.exe',
-  //   'C:\\Users\\maria\\AppData\\Roaming\\npm\\node_modules\\mg-links\\index.js',
-  //   'C:/www/LIM016-md-links/src/some/some1/example3.md'
-  // ]
 
   let options = program.opts();
-  // options { validate: true } // return true with -v or --validate
-  // mg-links C:/www/LIM016-md-links/src/some/some1/example3.md -v
 
   if (Object.keys(options).length === 0) {
     options = { 'validate': false}

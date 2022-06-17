@@ -12,7 +12,7 @@ const cli = (data) => {
   // console.log("data recibida en cli:", data);
   if (data.pathData == "" || data.pathData == "''") {
     logWarning(
-      "Por favor ingrese una ruta válida. por ejemplo: md-links <path-to-file> [options]"
+      "Por favor ingrese una ruta válida. por ejemplo: C:\Users\Acer\Desktop\PROYECTO4LABORATORIA\LIM017-md-links\pruebas"
     );
   } else {
     printBanner();
@@ -33,7 +33,7 @@ const cli = (data) => {
             let uniqueArray = [];
             links.filter((link) => {
               for (const property in link) {
-                if (property == "href") {
+                if (property == "Enlace") {
                   uniqueArray.push(`${property}: ${link[property]}`);
                 }
               }
@@ -56,10 +56,10 @@ const cli = (data) => {
           let brokenArray = [];
           links.filter((link) => {
             for (const property in link) {
-              if (property == "href") {
+              if (property == "Enlace") {
                 uniqueArray.push(`${property}: ${link[property]}`);
               }
-              if (property == "ok") {
+              if (property == "MensajeEstado") {
                 brokenArray.push(`${link[property]}`);
               }
             }
