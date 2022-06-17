@@ -3,7 +3,7 @@ Es una librería que permite validar URLs dentro de archivos markdown. Te permit
 
 ## Cómo empezar 
 
-![md-links-carmen](C:\Users\Acer\Desktop\PROYECTO4LABORATORIA\LIM017-md-links\Img\md-links-carmen.jpg)
+![md-links-carmen](https://raw.githubusercontent.com/carmen0810/LIM017-md-links/main/img/md-links-carmen.jpg)
 
 Estas instrucciones le permitirán instalar la biblioteca en su máquina local para el desarrollo.
 
@@ -28,28 +28,32 @@ Las rutas introducidas pueden ser **relativas** o **absolutas** y las opciones q
 
 ### Caso 1: `md-links <path-to-file>`
 
-![md-links-caso1](C:\Users\Acer\Desktop\PROYECTO4LABORATORIA\LIM017-md-links\Img\caso1-md-links.jpg)
+![md-links-caso1](https://raw.githubusercontent.com/carmen0810/LIM017-md-links/main/img/caso1-md-links.jpg)
 
 ### Caso 2: `md-links <path-to-file> --validate`
 
-![md-links-caso2](C:\Users\Acer\Desktop\PROYECTO4LABORATORIA\LIM017-md-links\Img\caso2-md-links.jpg)
+![md-links-caso2](https://raw.githubusercontent.com/carmen0810/LIM017-md-links/main/img/caso2-md-links.jpg)
 
 ### Caso 3:  `md-links <path-to-file> --stats`
 
-![md-links-caso3](C:\Users\Acer\Desktop\PROYECTO4LABORATORIA\LIM017-md-links\Img\caso3-md-links.jpg)
+![md-links-caso3](https://raw.githubusercontent.com/carmen0810/LIM017-md-links/main/img/caso3-md-links.jpg)
 
 ### Caso 4:   `md-links <path-to-file> --stats --validate` o `md-links <path-to-file> --validate --stats`
 
-![md-links-caso4](C:\Users\Acer\Desktop\PROYECTO4LABORATORIA\LIM017-md-links\img\caso4-md-links.jpg)
+![md-links-caso4](https://raw.githubusercontent.com/carmen0810/LIM017-md-links/main/img/caso4-md-links.jpg)
 
 ### Caso 5:    `md-links --help`
 
-![md-links-caso5](C:\Users\Acer\Desktop\PROYECTO4LABORATORIA\LIM017-md-links\img\caso5-md-links.jpg)
+![md-links-caso5](https://raw.githubusercontent.com/carmen0810/LIM017-md-links/main/img/caso5-md-links.jpg)
 
 ### Caso 6:     Cuando la información se omite o es incorrecta
 
-![md-links-caso6](C:\Users\Acer\Desktop\PROYECTO4LABORATORIA\LIM017-md-links\img\caso6-md-links.jpg)
+![md-links-caso6](https://raw.githubusercontent.com/carmen0810/LIM017-md-links/main/img/caso6-md-links.jpg)
 
 ### Caso 7:     `md-links <path-to-directory>`
 
-![md-links-caso6](C:\Users\Acer\Desktop\PROYECTO4LABORATORIA\LIM017-md-links\img\caso7-md-links.jpg)
+![md-links-caso6](https://raw.githubusercontent.com/carmen0810/LIM017-md-links/main/img/caso7-md-links.jpg)
+
+## Autora
+
+[Carmen Herrera](https://github.com/carmen0810)

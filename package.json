@@ -1,6 +1,6 @@
 {
   "name": "md-links-carmen",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "A command line tool for which reads and parses Markdown files, to verify the links they contain and to report some statistics.",
   "type": "module",
   "main": "index.js",
